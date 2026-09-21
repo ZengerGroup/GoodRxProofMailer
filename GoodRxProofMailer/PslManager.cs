@@ -95,6 +95,17 @@ namespace GoodRxProofMailer
                 Logger.WriteLog("Failed to start PSL. Attempt {0} of 5.", false, (++failedAttempts).ToString());
             }
         }
+        public void Kill()
+        {
+            try
+            {
+                PslProcess.Kill(true);
+            }
+            catch
+            {
+                Logger.WriteLog("Failed to exit psl!", false);
+            }
+        }
         public bool MoveOutput(string workingDirectory)
         {
             try 

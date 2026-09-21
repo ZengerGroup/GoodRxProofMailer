@@ -44,11 +44,13 @@ namespace GoodRxProofMailer
                             Logger.Display("Failed to move PSL output, check hotfolder output. Press any key to exit the application.", false);
                             Console.ReadKey();
                         }
+                        PSL.Kill();
                     }
                     else
                     {
                         Logger.Display("PSL processing failed. Please check status and retry. Press any key to exit the application.", false);
                         Console.ReadKey();
+                        PSL.Kill();
                     }
                 }
                 else
